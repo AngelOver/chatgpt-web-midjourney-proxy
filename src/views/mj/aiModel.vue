@@ -36,7 +36,7 @@ model: [
 		'grok-3',
 		'gemini-2.0-flash-thinking-exp'
 ],
-,maxToken:12800
+maxToken:12800
 }); 
 const st= ref({openMore:false });
 const voiceList= computed(()=>{
