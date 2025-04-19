@@ -15,8 +15,7 @@ const nGptStore = ref(  chatSet.getGptConfig() );
 
 const config = ref({
 model: [
-    'gpt-3.5-turbo',
-    'gpt-3.5-turbo-16k',
+    'gpt-3.5-turbo'
     'gpt-4',
     'gpt-4o',
     'gpt-4-turbo',
@@ -31,9 +30,13 @@ model: [
     'flux',
     'chatgpt-4o-latest',
     'claude-3-5-sonnet-20241022',
-    'claude-3-5-haiku-20241022'
-]
-,maxToken:4096
+    'claude-3-5-haiku-20241022',
+		'claude-3-7-sonnet-20250219',
+		'claude-3-7-sonnet-thinking',
+		'grok-3',
+		'gemini-2.0-flash-thinking-exp'
+],
+,maxToken:12800
 }); 
 const st= ref({openMore:false });
 const voiceList= computed(()=>{
