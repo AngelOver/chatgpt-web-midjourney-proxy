@@ -20,6 +20,7 @@ model: [
     'gpt-4o',
     'gpt-4-turbo',
     'gpt-4o-mini',
+	  'gpt-4o-image',
     'deepseek-r1',
     'deepseek-reasoner',
     'deepseek-v3',
