@@ -38,6 +38,18 @@ const goHome =computed(  () => {
 // }
 //mlog('g', goHome() );
 const chatId= computed(()=>chatStore.active??'1002' );
+
+const openPlusPool = () => {
+  window.open('https://ejsslvmr4v.apifox.cn/6535512m0', '_blank')
+}
+
+const openTutorial = () => {
+  window.open('https://wddotnlfvy.apifox.cn/5465537m0', '_blank')
+}
+
+const openMoreTutorial = () => {
+  window.open('https://wddotnlfvy.apifox.cn/5475954m0', '_blank')
+}
 </script>
 <template>
 <div class="flex-shrink-0 w-[60px] z-[1000]  h-full" v-if="!isMobile" data-tauri-drag-region>
@@ -134,20 +146,56 @@ const chatId= computed(()=>chatStore.active??'1002' );
                 </n-tooltip>                
             </a>
 
-             <a v-if="!isDisableMenu ( 'realtime')"   @click="homeStore.setMyData({act:'openRealtime'}) "  
+             <a v-if="!isDisableMenu ( 'realtime')"   @click="homeStore.setMyData({act:'openRealtime'}) "
                 class=" router-link-exact-active h-12 w-12 cursor-pointer rounded-xl bg-white duration-300 dark:bg-[#34373c] hover:bg-[#bbb] dark:hover:bg-[#555]">
                 <n-tooltip placement="right" trigger="hover">
-                  <template #trigger> 
+                  <template #trigger>
                     <div  class="flex  h-full justify-center items-center py-1 flex-col " :class="[ goHome =='realtime' ? 'active' : '']">
                       <SvgIcon icon="ri:mic-fill" class="text-3xl flex-1"></SvgIcon>
                       <span class="text-[10px]">{{$t('mj.rttab')}}</span>
-                    </div>  
+                    </div>
                   </template>
                     {{ $t('mj.rtinfo') }}
-                </n-tooltip>                
+                </n-tooltip>
+            </a>
+<a @click="openPlusPool"
+    class=" router-link-exact-active h-12 w-12 cursor-pointer rounded-xl bg-white duration-300 dark:bg-[#34373c] hover:bg-[#bbb] dark:hover:bg-[#555]">
+    <n-tooltip placement="right" trigger="hover">
+      <template #trigger>
+        <div  class="flex  h-full justify-center items-center py-1 flex-col">
+          <SvgIcon icon="ri:group-line" class="text-3xl flex-1"></SvgIcon>
+          <span class="text-[10px]">Plus号池</span>
+        </div>
+      </template>
+        共享Plus号池
+    </n-tooltip>
+</a>
+
+            <a @click="openTutorial"
+                class=" router-link-exact-active h-12 w-12 cursor-pointer rounded-xl bg-white duration-300 dark:bg-[#34373c] hover:bg-[#bbb] dark:hover:bg-[#555]">
+                <n-tooltip placement="right" trigger="hover">
+                  <template #trigger>
+                    <div  class="flex  h-full justify-center items-center py-1 flex-col">
+                      <SvgIcon icon="ri:book-open-line" class="text-3xl flex-1"></SvgIcon>
+                      <span class="text-[10px]">教程</span>
+                    </div>
+                  </template>
+                    基础教程
+                </n-tooltip>
             </a>
 
-            
+            <a @click="openMoreTutorial"
+                class=" router-link-exact-active h-12 w-12 cursor-pointer rounded-xl bg-white duration-300 dark:bg-[#34373c] hover:bg-[#bbb] dark:hover:bg-[#555]">
+                <n-tooltip placement="right" trigger="hover">
+                  <template #trigger>
+                    <div  class="flex  h-full justify-center items-center py-1 flex-col">
+                      <SvgIcon icon="ri:book-2-line" class="text-3xl flex-1"></SvgIcon>
+                      <span class="text-[10px]">更多教程</span>
+                    </div>
+                  </template>
+                    更多教程
+                </n-tooltip>
+            </a>
 
              
 
