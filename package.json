@@ -15,6 +15,9 @@
     "gpts ui",
     "vue"
   ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p build-only",
