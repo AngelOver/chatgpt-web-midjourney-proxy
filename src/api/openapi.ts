@@ -725,7 +725,7 @@ const getModelMax=( model:string )=>{
         return 32;
     }else if( model.indexOf('grok')>-1 ){
        return 128; 
-    }else if(  model.indexOf('gpt-4.5')>-1|| model.indexOf('gpt-4-turbo')>-1||  model.indexOf('gpt-4o')>-1 ||   model.indexOf('o1-')>-1){
+    }else if( model.indexOf('deep')>-1||model.indexOf('claude')>-1|| model.indexOf('gpt-4.5')>-1|| model.indexOf('gpt-4-turbo')>-1||  model.indexOf('gpt-4o')>-1 ||   model.indexOf('o1-')>-1){
         return 128; 
     }else if( model.indexOf('64k')>-1 || model.indexOf('deepseek')>-1 ){
         return 64;

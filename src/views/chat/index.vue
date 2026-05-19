@@ -651,7 +651,12 @@ const ychat = computed(() => {
               v-else
             >
               <SvgIcon icon="ri:bubble-chart-fill" class="mr-2 text-3xl" />
-              <span>Aha~</span>
+       <span>Aha~ 如不会配置，<a
+                target="_blank"
+                href="https://wddotnlfvy.apifox.cn/5465537m0"
+                class="text-blue-500 hover:text-blue-400 underline transition-colors duration-200 cursor-pointer"
+                title="点击前往教程"
+              >点击&gt;&gt;前往教程 </a> （还可以加更多模型）</span>
             </div>
           </template>
           <template v-else>
