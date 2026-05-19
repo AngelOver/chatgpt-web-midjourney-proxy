@@ -21,15 +21,11 @@ const nGptStore = ref(  chatSet.getGptConfig() );
 // ,'claude-3-5-sonnet-20241022','claude-3-sonnet-20240229','claude-3-opus-20240229','claude-3-haiku-20240307','claude-3-5-sonnet-20240620','suno-v3'
 
 const config = ref({
-model:['gpt-5.5', 'gpt-5.4','gpt-5.1','gemini-3.1-pro-preview','gemini-3-pro-preview','grok-4','gpt-5','gpt-5.5-mini','gpt-5.4-nano','o1','o1-2024-12-17', 'gpt-4-turbo-2024-04-09','o1-preview','o1-mini','o1-preview-2024-09-12','o1-mini-2024-09-12','chatgpt-4o-latest','gpt-4o-2024-11-20','gpt-4o-2024-08-06','gpt-4o-2024-05-13','gpt-4o-mini-2024-07-18','gpt-4o-mini','gpt-4o','gpt-4o-image','gpt-4-turbo','gpt-4-0125-preview','gpt-3.5-turbo',`gpt-4-1106-preview`,`gpt-3.5-turbo-16k`,'gpt-4','gpt-4-0613','gpt-4-32k-0613' ,'gpt-4-32k','gpt-4-32k-0314',`gpt-3.5-turbo-16k-0613`
-,`gpt-4-vision-preview`,`gpt-3.5-turbo-1106` ,'gpt-3.5-turbo-0125'
-,'gpt-3.5-turbo-0301','gpt-3.5-turbo-0613','gpt-4-all','gpt-3.5-net'
-,'gemini-3-flash-preview',"gemini-3.1-flash",'gemini-2.5-pro','gemini-2.5-flash'
-,'claude-sonnet-4-6','claude-opus-4-7','claude-opus-4-6','claude-haiku-4-5','claude-sonnet-4-20250514','claude-sonnet-4-20250514-thinking','claude-3-7-sonnet-20250219'
-,'deepseek-chat','deepseek-r1','deepseek-reasoner','deepseek-v3','deepseek-v3.2','deepseek-v4-flash','deepseek-v4-pro'
-,'grok-4.2','grok-4.1','grok-3'
-,'o4-mini','stable-diffusion','flux'
-,'gpt-4.5-preview-2025-02-27','gpt-4.5-preview'
+model:['gpt-5.5','gpt-5.4','gpt-5.4-mini','gpt-5.5-mini','gpt-4o-mini','gpt-4o','gpt-image-2','gpt-3.5-turbo'
+,'claude-opus-4-7','claude-opus-4-6','claude-sonnet-4-6'
+,'gemini-3.1-pro-preview','gemini-3.1-flash-preview','gemini-3-flash-preview','gemini-3-pro-image-preview','gemini-3.1-flash','gemini-2.5-pro','gemini-2.5-flash'
+,'deepseek-v4-pro','deepseek-v4-flash','deepseek-v3.2','deepseek-v3.1','deepseek-v3','deepseek-chat','deepseek-r1'
+,'grok-4','grok-4.2','grok-4.1','grok-3'
 ]
 ,maxToken:16384
 }); 
@@ -44,8 +40,8 @@ const modellist = computed(() => { //
     for(let o of config.value.model){
         rz.push({label:o,value:o})
     }
-    if(gptConfigStore.myData.userModel){
-        let arr = gptConfigStore.myData.userModel.split(/[ ,]+/ig);
+    if(nGptStore.value.userModel){
+        let arr = nGptStore.value.userModel.split(/[ ,]+/ig);
         //  let uniqueArray  = arr.filter((value, index, self) => {
         //     return self.indexOf(value) === index;
         // });
@@ -171,7 +167,7 @@ const serverSuccess=(s:any)=>{
     </div>
 </section>
 <section class="mb-4 flex justify-between items-center"  >
-    <n-input   :placeholder="$t('mjchat.modlePlaceholder')" v-model:value="gptConfigStore.myData.userModel">
+    <n-input   :placeholder="$t('mjchat.modlePlaceholder')" v-model:value="nGptStore.userModel">
       <template #prefix>
         {{ $t('mjchat.myModle') }}
       </template>

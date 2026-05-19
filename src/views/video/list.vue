@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { LazyImg, Waterfall } from 'vue-waterfall-plugin-next'
 import 'vue-waterfall-plugin-next/dist/style.css'
-import { ViewCard } from 'vue-waterfall-plugin-next/dist/types/types/waterfall';
+import type { ViewCard } from 'vue-waterfall-plugin-next/dist/types/types/waterfall';
 
 import { mlog } from '@/api';
 import { DtoItem, DtoStore } from '@/api/dtoStore';

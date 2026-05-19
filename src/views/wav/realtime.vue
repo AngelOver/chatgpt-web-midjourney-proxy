@@ -8,7 +8,7 @@ import { onMounted, ref, watch } from 'vue';
 import { mlog,RealtimeEvent,instructions } from '@/api';
 import { WavRenderer } from '@/utils/wav_renderer';
 import { RealtimeClient } from '@openai/realtime-api-beta';
-import { ItemType } from '@openai/realtime-api-beta/dist/lib/client.js';
+import { ItemType } from '@openai/realtime-api-beta/lib/client.js';
 import { useMessage ,NModal,NButton} from 'naive-ui';
 import { gptServerStore } from '@/store';
 import { t } from '@/locales';

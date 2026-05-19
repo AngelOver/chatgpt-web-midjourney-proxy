@@ -84,7 +84,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/music/:uuid?',
-        name: 'music',
+        name: 'musicIndex',
         component: () => import('@/views/suno/music.vue'),
       },
     ],
@@ -100,7 +100,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/video/:uuid?',
-        name: 'video',
+        name: 'videoIndex',
         component: () => import('@/views/luma/video.vue'),
       },
     ],
@@ -114,7 +114,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/dance/:uuid?',
-        name: 'dance',
+        name: 'danceIndex',
         component: () => import('@/views/viggle/dance.vue'),
       },
     ],
@@ -128,7 +128,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '/wav/:uuid?',
-        name: 'wav',
+        name: 'wavIndex',
         component: () => import('@/views/wav/wav.vue'),
       },
     ],
